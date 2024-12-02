@@ -78,8 +78,8 @@ def visualize(cid, destination, hu_min=DEFAULT_HU_MIN, hu_max=DEFAULT_HU_MAX,
     # Load segmentation and volume
     vol, seg = load_case(cid)
     spacing = vol.affine
-    vol = vol.get_data()
-    seg = seg.get_data()
+    vol = vol.get_fdata()
+    seg = seg.get_fdata()
     seg = seg.astype(np.int32)
     
     vol_ims = None
